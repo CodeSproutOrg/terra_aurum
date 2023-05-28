@@ -1,0 +1,1 @@
+web: gunicorn terra_aurum.wsgi
