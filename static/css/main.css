@@ -1,8 +1,12 @@
-body {margin: 0;}
+body {
+    margin: 0;
+    font-family: "Cinzel", sans-serif;
+}
 a {text-decoration: none;}
 
 .color {color: #B2863A;}
 .s-color {color: #EEEFEB;}
+.t-color {color: #634411;}
 .b-color {background-color: #EEEFEB;}
 .sb-color {background-color: #B2863A;}
 .tb-color {background-color: #634411;}
@@ -30,7 +34,7 @@ header input::placeholder {color: #EEEFEB;}
 
 
 
-#content {height: 80vh;}
+#content {height: 90vh;}
 
 #main {
     display: flex;
@@ -44,8 +48,9 @@ header input::placeholder {color: #EEEFEB;}
     padding: 2% 10%;
     width: 30%;
 }
+#main p {font-size: 13px;}
 
-#main-2 {padding: 5%;}
+#main-2 {padding: 3% 5%;}
 #main-2 p {
     font-style: italic;
     text-align: center;
@@ -55,10 +60,13 @@ header input::placeholder {color: #EEEFEB;}
 footer {
     display: flex;
 }
-footer div {width: 50%;}
-#social-media {text-align: center;}
-#social-media p {padding: 5% 2%;}
+footer div {}
+#social-media {text-align: center; width: 50%;}
+#social-media p {padding: 5% 2%; margin: 0; background-image: url(../img/gold.png);}
+#social-media div {}
+
 #communication {
+    width: 50%;
     padding: 2% 5%;
     text-align: end;
 }
