@@ -34,7 +34,7 @@ header input::placeholder {color: #EEEFEB;}
 
 
 
-#content {height: 90vh;}
+#content {}
 
 #main {
     display: flex;
@@ -43,6 +43,7 @@ header input::placeholder {color: #EEEFEB;}
     background-repeat: no-repeat;
     background-size: 70%;
     background-position: top right;
+        min-height: 500px;
 }
 #main div {
     padding: 2% 10%;
@@ -59,6 +60,7 @@ header input::placeholder {color: #EEEFEB;}
 
 footer {
     display: flex;
+    margin-top: 5%;
 }
 footer div {}
 #social-media {text-align: center; width: 50%;}
