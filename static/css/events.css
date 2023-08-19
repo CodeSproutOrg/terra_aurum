@@ -1,0 +1,9 @@
+/* Events page css */
+
+#events {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.event {min-width: 30%;}

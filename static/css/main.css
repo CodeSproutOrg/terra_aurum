@@ -41,7 +41,7 @@ header input::placeholder {color: #EEEFEB;}
     min-height: 100vh;
     position: relative;
 }
-
+#content-inside {padding: 5%;}
 #main {
     display: flex;
     text-align: center;

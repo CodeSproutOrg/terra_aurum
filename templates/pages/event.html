@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div id="content-inside">
+    <div class="event">
+        <div class="event-header">
+            <a href="{% url 'event' event.slug %}">
+                <h1>{{ event.title }}</h1>
+            </a>
+            <p>{{ event.time }}</p>
+        </div>
+        <div class="event-content">
+            <p>{{ event.description|linebreaks }}</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
