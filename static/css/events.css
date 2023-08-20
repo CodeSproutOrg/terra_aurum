@@ -2,8 +2,10 @@
 
 #events {
     display: flex;
-    justify-content: flex-start;
-    align-items: center;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
 }
 
-.event {min-width: 30%;}
+.event {width: 25%; padding: 3%;}
+.event p {font-size: smaller;}

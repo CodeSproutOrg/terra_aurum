@@ -3,7 +3,7 @@
 {% block content %}
 <div id="content-inside">
     <div id="events-description">
-        <h1>PODUJATIA</h1>
+        <h1 class="color">PODUJATIA</h1>
         <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             Aliquam efficitur, dui non molestie congue, libero metus
@@ -26,7 +26,7 @@
         <div class="event">
             <div class="event-header">
                 <a href="{% url 'event' event.slug %}">
-                    <h1>{{ event.title }}</h1>
+                    <h1 class="color">{{ event.title }}</h1>
                 </a>
                 <p>{{ event.time }}</p>
             </div>

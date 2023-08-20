@@ -29,4 +29,24 @@
         zrkadlo zobrazujúce smer a intenzitu jeho vlastného prítomného života." - Václav Mencl, 1954
     </p>
 </div>
+<div id="content-inside">
+    <div id="upcoming-events">
+        <h1 class="color">Pripravované podujatia</h1>
+        <div id="upcoming-events-events">
+            {% for event in events %}
+            <div class="event">
+                <div class="event-header">
+                    <a href="{% url 'event' event.slug %}">
+                        <h2 class="color">{{ event.title }}</h2>
+                    </a>
+                    <p>{{ event.time }}</p>
+                </div>
+                <div class="event-content">
+                    <p>{{ event.description|truncatewords:5 }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
 {% endblock %}
