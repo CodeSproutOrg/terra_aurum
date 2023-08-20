@@ -10,7 +10,7 @@ template_folder = 'pages'
 menu = {
     'O NÁS': '/about-us',
     'PODUJATIA': '/events',
-    'KONTAKT': '',
+    'KONTAKTY': '/contacts',
     'DOKUMENTY': '/documents'
 }
 
@@ -22,10 +22,7 @@ def index(request):
     current_date = datetime.now()
     three_months_later = current_date + timedelta(days=90)
 
-    upcoming_events = Event.objects.filter(
-        Q(time__gte=current_date) & Q(time__lte=three_months_later)
-    )
-
+    upcoming_events = Event.objects.filter(Q(time__gte=current_date) & Q(time__lte=three_months_later)).order_by('time')
     data['events'] = upcoming_events
 
     return render(request, template, context=data)
@@ -38,7 +35,7 @@ def about_us(request):
 
 
 def event(request, slug):
-    template = f'{template_folder}/event.html'
+    template = f'{template_folder}/events/event.html'
 
     this_event = Event.objects.get(slug=slug)
     data = {
@@ -50,11 +47,22 @@ def event(request, slug):
 
 
 def events(request):
-    template = f'{template_folder}/events.html'
+    template = f'{template_folder}/events/events.html'
     data = {"title": "PODUJATIA", "menu": menu}
 
-    all_events = Event.objects.all()
-    data['all_events'] = all_events
+    current_date = datetime.now()
+    past_events = Event.objects.filter(time__lt=current_date).order_by('-time')
+    future_events = Event.objects.filter(time__gte=current_date).order_by('time')
+
+    data['past_events'] = past_events
+    data['future_events'] = future_events
+
+    return render(request, template, context=data)
+
+
+def contacts(request):
+    template = f'{template_folder}/contacts.html'
+    data = {"title": "PODUJATIA", "menu": menu}
 
     return render(request, template, context=data)
 

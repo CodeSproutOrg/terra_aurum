@@ -1,11 +1,17 @@
 /* Events page css */
-
-#events {
+.events-block {margin-top: 25px;}
+.events-content {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     flex-wrap: wrap;
 }
 
-.event {width: 25%; padding: 3%;}
+.event {
+    width: 25%;
+    padding-right: 3%;
+}
 .event p {font-size: smaller;}
+
+
+/* Event page css */
