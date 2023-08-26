@@ -71,3 +71,8 @@ def documents(request):
     template = f'{template_folder}/documents.html'
     data = {"title": "DOKUMENTY", "menu": menu}
     return render(request, template, context=data)
+
+
+def view_404(request, exception):
+    template = 'errors/404.html'
+    return render(request, template, status=404)

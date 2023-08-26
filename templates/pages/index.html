@@ -30,19 +30,19 @@
     </p>
 </div>
 <div id="content-inside">
-    <div class="events-block">
+    <div class="main-events-block">
         <h1 class="color">Pripravované podujatia</h1>
-        <div class="events-content">
+        <div id="main-events">
             {% for event in events %}
-            <div class="event">
-                <div class="event-header">
+            <div class="main-event">
+                <div class="main-event-header">
                     <a href="{% url 'event' event.slug %}">
                         <h2 class="color">{{ event.title }}</h2>
                     </a>
                     <p>{{ event.time }}</p>
                 </div>
                 <div class="event-content">
-                    <p>{{ event.description|truncatewords:5 }}</p>
+                    <p>{{ event.description|truncatewords:100 }}</p>
                 </div>
             </div>
             {% endfor %}
