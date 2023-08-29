@@ -1,31 +1,28 @@
 /* Index webpage  */
-#main {
+#terra-aurum {
     display: flex;
     text-align: center;
     background-image: url(../img/main-page.png);
     background-repeat: no-repeat;
-    background-size: 70%;
+    background-size: 70% 100%;
     background-position: top right;
+    min-height: 430px;
 }
-#main div {
+#terra-aurum div {
     padding: 2% 10%;
     width: 30%;
 }
-#main p {font-size: 13px;}
+#terra-aurum p {font-size: 14px;}
 
-#main-2 {padding: 3% 5%;}
-#main-2 p {
+#quote-section {
+    margin-top: 5%;
+    padding: 3% 5%;
+}
+#quote-section p {
     font-style: italic;
-    text-align: center;
     font-size: 20px;
+    text-align: -webkit-center;
 }
-
-/*
-@media screen and (min-width: 1070px) {
-    #main h1 {font-size: 40px;}
-    #main p {font-size: 15px;}
-}
-*/
 
 /* Events block */
 .main-events-block {
@@ -52,3 +49,9 @@
     align-items: center;
     justify-content: space-between;
 }
+
+/*
+@media screen and (max-width: 1070px) {
+    #main {max-height: 435px;}
+}
+*/

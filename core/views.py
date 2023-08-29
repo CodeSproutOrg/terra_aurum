@@ -74,5 +74,6 @@ def documents(request):
 
 
 def view_404(request, exception):
+    data = {"title": "Neexistuje", "menu": menu}
     template = 'errors/404.html'
-    return render(request, template, status=404)
+    return render(request, template, context=data, status=404)
