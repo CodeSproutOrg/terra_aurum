@@ -1,0 +1,54 @@
+/* Index webpage  */
+#main {
+    display: flex;
+    text-align: center;
+    background-image: url(../img/main-page.png);
+    background-repeat: no-repeat;
+    background-size: 70%;
+    background-position: top right;
+}
+#main div {
+    padding: 2% 10%;
+    width: 30%;
+}
+#main p {font-size: 13px;}
+
+#main-2 {padding: 3% 5%;}
+#main-2 p {
+    font-style: italic;
+    text-align: center;
+    font-size: 20px;
+}
+
+/*
+@media screen and (min-width: 1070px) {
+    #main h1 {font-size: 40px;}
+    #main p {font-size: 15px;}
+}
+*/
+
+/* Events block */
+.main-events-block {
+    margin-top: 25px;
+    min-height: 350px;
+    display: flex;
+    flex-direction: column;
+}
+#main-events {
+    display: flex;
+    flex: 1;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+}
+.main-event {
+    min-width: 95%;
+    padding-right: 5%;
+    scroll-snap-align: center;
+}
+.main-event-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
