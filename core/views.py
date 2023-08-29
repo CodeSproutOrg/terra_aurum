@@ -62,7 +62,7 @@ def events(request):
 
 def contacts(request):
     template = f'{template_folder}/contacts.html'
-    data = {"title": "PODUJATIA", "menu": menu}
+    data = {"title": "KONTAKTY", "menu": menu}
 
     return render(request, template, context=data)
 
