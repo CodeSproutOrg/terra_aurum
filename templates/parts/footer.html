@@ -1,11 +1,15 @@
+{% load static %}
+
 <div id="social-media" class="tb-color">
     <p class="t-color">
         Všetky aktuality a zaujímavosti nájdete na
         našich oficiálnych sociálnych sieťach. Budeme
         radi, ak nás na nich budete sledovať.
     </p>
-    <div>
-        <img src="" alt=""><img src="" alt=""><img src="" alt="">
+    <div id="social-media-links">
+        <a href=""><img src="{% static '/img/icons/inst.png'%}" alt="instargam"></a>
+        <a href=""><img src="{% static '/img/icons/faceb.png'%}" alt="facebook"></a>
+        <a href=""><img src="{% static '/img/icons/yout.png'%}" alt="youtube"></a>
     </div>
 </div>
 <div id="communication">

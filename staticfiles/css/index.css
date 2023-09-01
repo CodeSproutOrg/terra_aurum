@@ -26,11 +26,13 @@
 
 /* Events block */
 .main-events-block {
+    margin: 0 5%;
     margin-top: 25px;
     min-height: 350px;
     display: flex;
     flex-direction: column;
 }
+.main-events-block h1 {font-weight: 400;}
 #main-events {
     display: flex;
     flex: 1;
@@ -51,6 +53,17 @@
 }
 
 /*
+#main-events::-webkit-scrollbar {
+    width: 2px;
+}
+#main-events::-webkit-scrollbar-track {
+    background: #B2863A;
+}
+#main-events::-webkit-scrollbar-thumb {
+    background: #EEEFEB;
+    border-radius: 5px;
+}
+
 @media screen and (max-width: 1070px) {
     #main {max-height: 435px;}
 }

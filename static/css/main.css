@@ -11,6 +11,7 @@ a {text-decoration: none;}
 .b-color {background-color: #EEEFEB;}
 .sb-color {background-color: #B2863A;}
 .tb-color {background-color: #634411;}
+.light-font {font-weight: 400;}
 
 header {
     padding: 0 2%;
@@ -34,6 +35,29 @@ header input::placeholder {color: #EEEFEB;}
     justify-content: flex-end;
 }
 
+#menu-button {
+    display: none;
+    height: 40px;
+    width: 40px;
+    position: relative;
+    border: 0;
+    z-index: 2;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2)
+}
+#menu-button span {
+    position: absolute;
+    width: 30px;
+    height: 1px;
+    left: 5px;
+}
+#menu-button span:nth-child(1) {
+    transform: translateY(10px);
+}
+#menu-button span:nth-child(2) {
+    transform: translateY(-10px);
+}
+
+
 #content {
     display: flex;
     flex-direction: column;
@@ -56,8 +80,13 @@ footer {
 }
 footer div {}
 #social-media {text-align: center; width: 50%;}
-#social-media p {padding: 5% 2%; margin: 0; background-image: url(../img/gold.png);}
-#social-media div {}
+#social-media p {padding: 5%; margin: 0; background-image: url(../img/gold.png);}
+#social-media div {
+    display: flex;
+    justify-content: space-around;
+    padding: 2%;
+}
+#social-media div a img {width: 25%; border-radius: 50%;}
 
 #communication {
     width: 50%;
@@ -65,3 +94,35 @@ footer div {}
     text-align: end;
 }
 #communication a {}
+
+@media screen and (max-width: 860px) {
+    #menu-button {
+        display: block;
+    }
+    #nav-bar {
+        position: absolute;
+        left: -400px;
+        top: 0;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 350px;
+        padding: 100px 20px 20px 20px;
+        background-color: #B2863A;
+        z-index: 1;
+        transition: transform .5s;
+    }
+    #nav-bar a {color: white;}
+
+    header {
+        justify-content: space-between;
+        padding: 0 5%;
+    }
+    header div a {
+        width: 100%;
+        margin-left: 40px;
+        margin-top: 10px;
+    }
+    #header.open #nav-bar {
+        transform: translateX(100%);
+    }
+}

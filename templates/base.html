@@ -2,11 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title }}</title>
     {% include 'parts/css.html' %}
+    {% include 'parts/js.html' %}
 </head>
 <body>
-    <header class="b-color">{% include 'parts/header.html' %}</header>
+    <header id="header" class="b-color">{% include 'parts/header.html' %}</header>
     <main>
         <div id="content">{% block content %}{% endblock %}</div>
         <footer class="b-color">{% include 'parts/footer.html' %}</footer>
