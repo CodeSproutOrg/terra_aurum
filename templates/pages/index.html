@@ -49,5 +49,36 @@
             {% endfor %}
         </div>
     </div>
+    <div class="contact-form">
+        <div class="contact-form-title">
+            <h2 class="color">Napíšte nám</h2>
+            <p>
+                Kontaktujte nás prostredníctvom tohto formulára a určite odpovieme
+                na vaše požiadavky a budeme venovať pozornosť vašim spätným väzbám.
+            </p>
+        </div>
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-full-name">
+                <div>
+                    {{ form.name.label_tag }}
+                    {{ form.name }}
+                </div>
+                <div>
+                    {{ form.surname.label_tag }}
+                    {{ form.surname }}
+                </div>
+            </div>
+            <div>
+                {{ form.email.label_tag }}
+                {{ form.email }}
+            </div>
+            <div>
+                {{ form.message.label_tag }}
+                {{ form.message }}
+            </div>
+            <button class="s-color sb-color" type="submit">Poslat'</button>
+        </form>
+    </div>
 </div>
 {% endblock %}

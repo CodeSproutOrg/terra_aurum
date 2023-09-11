@@ -52,6 +52,72 @@
     justify-content: space-between;
 }
 
+/* Contact form */
+.contact-form {
+    margin: 0 5%;
+    margin-top: 25px;
+}
+.contact-form form {
+    padding: 2%;
+    background-color: #efd16f;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.contact-form form > div {
+    padding: 5px;
+    width: 98%;
+}
+.contact-form form div > label {
+    color: #B2863A;
+    font-style: italic;
+    position: absolute;
+    padding: 5px 10px;
+}
+.contact-form form div > input,textarea {
+    font-family: "Cinzel", sans-serif;
+    font-size: large;
+    border: none;
+    width: 100%;
+    padding-bottom: 5px;
+    padding-left: 10px;
+}
+.contact-form form div input {
+    padding-top: 15px;
+    height: 50px;
+}
+.contact-form form div textarea {
+    padding-top: 30px;
+}
+
+/* Full name inputs */
+.form-full-name {
+    display: flex;
+    flex-direction: row;
+}
+.form-full-name div {width: 50%;}
+.form-full-name div:first-child {padding-right: 20px;}
+
+/* Form Button */
+.contact-form form button {
+    padding: 1%;
+    margin-left: 5px;
+    width: 200px;
+}
+
+
+/* Media */
+@media screen and (max-width: 800px) {
+    #terra-aurum {
+        background-image: none;
+        min-height: unset;
+    }
+    #terra-aurum div {
+        width: 100%;
+    }
+}
+
 /*
 #main-events::-webkit-scrollbar {
     width: 2px;
