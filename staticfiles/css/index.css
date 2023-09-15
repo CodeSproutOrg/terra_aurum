@@ -26,9 +26,8 @@
 
 /* Events block */
 .main-events-block {
-    margin: 0 5%;
-    margin-top: 25px;
-    min-height: 350px;
+    margin: 5%;
+    min-height: 450px;
     display: flex;
     flex-direction: column;
 }
@@ -46,10 +45,88 @@
     padding-right: 5%;
     scroll-snap-align: center;
 }
+.main-event a {
+    font-style: italic;
+    padding: 1% 2%;
+    margin: 1%;
+}
 .main-event-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+.main-event-header p {}
+.event-content p {
+    padding: 1%;
+    margin-top: 5px;
+}
+
+/* Contact form */
+.contact-form {
+    margin: 0 5%;
+    padding: 2% 4%;
+}
+.contact-form-title {
+    padding: 1%;
+    padding-bottom: 0;
+}
+.contact-form form {
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.contact-form form > div {
+    padding: 5px;
+    width: 98%;
+}
+.contact-form form div > label {
+    color: #B2863A;
+    font-style: italic;
+    position: absolute;
+    padding: 5px 10px;
+}
+.contact-form form div > input,textarea {
+    font-family: "Cinzel", sans-serif;
+    font-size: large;
+    border: none;
+    width: 100%;
+    padding-bottom: 5px;
+    padding-left: 10px;
+}
+.contact-form form div input {
+    padding-top: 15px;
+    height: 50px;
+}
+.contact-form form div textarea {
+    padding-top: 30px;
+}
+
+/* Full name inputs */
+.form-full-name {
+    display: flex;
+    flex-direction: row;
+}
+.form-full-name div {width: 50%;}
+.form-full-name div:first-child {padding-right: 20px;}
+
+/* Form Button */
+.contact-form form button {
+    padding: 1%;
+    margin-left: 5px;
+    width: 200px;
+}
+
+
+/* Media */
+@media screen and (max-width: 800px) {
+    #terra-aurum {
+        background-image: none;
+        min-height: unset;
+    }
+    #terra-aurum div {
+        width: 100%;
+    }
 }
 
 /*

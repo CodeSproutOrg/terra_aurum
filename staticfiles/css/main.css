@@ -3,6 +3,11 @@ body {
     font-family: "Cinzel", sans-serif;
 }
 a {text-decoration: none;}
+button {
+    font-family: "Cinzel", sans-serif;
+    border: NONE;
+    font-size: large;
+}
 
 
 .color {color: #B2863A;}
@@ -95,7 +100,7 @@ footer div {}
 }
 #communication a {}
 
-@media screen and (max-width: 860px) {
+@media screen and (max-width: 800px) {
     #menu-button {
         display: block;
     }
@@ -119,10 +124,17 @@ footer div {}
     }
     header div a {
         width: 100%;
-        margin-left: 40px;
+        margin-left: 30px;
         margin-top: 10px;
     }
     #header.open #nav-bar {
         transform: translateX(100%);
+    }
+}
+
+@media screen and (max-width: 425px) {
+    header div a {
+        width: 100%;
+        margin-left: 10px;
     }
 }

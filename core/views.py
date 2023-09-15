@@ -20,7 +20,6 @@ def index(request):
         "menu": menu,
         'events': get_upcoming_events()
     }
-
     if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():

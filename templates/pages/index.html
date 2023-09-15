@@ -37,21 +37,20 @@
             {% for event in events %}
             <div class="main-event">
                 <div class="main-event-header">
-                    <a href="{% url 'event' event.slug %}">
-                        <h2 class="color">{{ event.title }}</h2>
-                    </a>
+                    <h2 class="color">{{ event.title }}</h2>
                     <p>{{ event.time }}</p>
                 </div>
                 <div class="event-content">
                     <p>{{ event.description|truncatewords:100 }}</p>
                 </div>
+                <a href="{% url 'event' event.slug %}" class="sb-color s-color">Prečítajte si viac o podujatí</a>
             </div>
             {% endfor %}
         </div>
     </div>
-    <div class="contact-form">
-        <div class="contact-form-title">
-            <h2 class="color">Napíšte nám</h2>
+    <div class="contact-form sb-color">
+        <div class="contact-form-title s-color">
+            <h2 class="">Napíšte nám</h2>
             <p>
                 Kontaktujte nás prostredníctvom tohto formulára a určite odpovieme
                 na vaše požiadavky a budeme venovať pozornosť vašim spätným väzbám.
@@ -77,7 +76,7 @@
                 {{ form.message.label_tag }}
                 {{ form.message }}
             </div>
-            <button class="s-color sb-color" type="submit">Poslat'</button>
+            <button class="color" type="submit">Poslat'</button>
         </form>
     </div>
 </div>

@@ -26,9 +26,8 @@
 
 /* Events block */
 .main-events-block {
-    margin: 0 5%;
-    margin-top: 25px;
-    min-height: 350px;
+    margin: 5%;
+    min-height: 450px;
     display: flex;
     flex-direction: column;
 }
@@ -46,20 +45,32 @@
     padding-right: 5%;
     scroll-snap-align: center;
 }
+.main-event a {
+    font-style: italic;
+    padding: 1% 2%;
+    margin: 1%;
+}
 .main-event-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
+.main-event-header p {}
+.event-content p {
+    padding: 1%;
+    margin-top: 5px;
+}
 
 /* Contact form */
 .contact-form {
     margin: 0 5%;
-    margin-top: 25px;
+    padding: 2% 4%;
+}
+.contact-form-title {
+    padding: 1%;
+    padding-bottom: 0;
 }
 .contact-form form {
-    padding: 2%;
-    background-color: #efd16f;
     height: 400px;
     display: flex;
     flex-direction: column;
