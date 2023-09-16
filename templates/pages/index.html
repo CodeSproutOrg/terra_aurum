@@ -32,18 +32,18 @@
 </div>
 <div id="content-inside">
     <div class="main-events-block">
-        <h1 class="color">Pripravované podujatia</h1>
+        <h2 class="color">Pripravované podujatia</h2>
         <div id="main-events">
             {% for event in events %}
             <div class="main-event">
                 <div class="main-event-header">
-                    <h2 class="color">{{ event.title }}</h2>
+                    <h3 class="color">{{ event.title }}</h3>
                     <p>{{ event.time }}</p>
                 </div>
                 <div class="event-content">
-                    <p>{{ event.description|truncatewords:100 }}</p>
+                    <p>{{ event.description|truncatewords:80 }}</p>
+                    <a href="{% url 'event' event.slug %}" class="sb-color s-color">Prečítajte si viac o podujatí</a>
                 </div>
-                <a href="{% url 'event' event.slug %}" class="sb-color s-color">Prečítajte si viac o podujatí</a>
             </div>
             {% endfor %}
         </div>

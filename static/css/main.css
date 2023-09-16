@@ -70,10 +70,7 @@ header input::placeholder {color: #EEEFEB;}
     position: relative;
 }
 #content-inside {padding: 0 5%;}
-#page-description {
-    padding-top: 5%;
-    padding-bottom: 2%;
-}
+#page-description {padding: 5%;}
 #page-description article {font-size: xx-large;}
 
 footer {
@@ -130,11 +127,24 @@ footer div {}
     #header.open #nav-bar {
         transform: translateX(100%);
     }
+
+    footer {font-size: 14px;}
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 426px) {
     header div a {
         width: 100%;
         margin-left: 10px;
     }
+
+    footer {flex-direction: column-reverse;}
+    #communication {
+        width: unset;
+        padding: 5%;
+        text-align: center;
+    }
+    #communication p {margin: 5px;}
+
+    #social-media {width: 100%;}
+    #social-media p {display: none;}
 }

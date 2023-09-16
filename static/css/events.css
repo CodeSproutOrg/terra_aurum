@@ -1,16 +1,12 @@
 /* Events page css */
-.events-block {margin-top: 25px;}
+.events-block {}
 .events-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
+    grid-gap: 20px;
 }
 
-.event {
-    width: 25%;
-    padding-right: 3%;
-}
+.event {padding: 5%;}
 .event p {font-size: smaller;}
 
 
