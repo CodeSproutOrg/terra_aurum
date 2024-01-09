@@ -2,13 +2,15 @@ body {
     margin: 0;
     font-family: "Cinzel", sans-serif;
 }
-a {text-decoration: none;}
+a {
+    text-decoration: none;
+    color: #B2863A;
+}
 button {
     font-family: "Cinzel", sans-serif;
     border: NONE;
     font-size: large;
 }
-
 
 .color {color: #B2863A;}
 .s-color {color: #EEEFEB;}
@@ -23,16 +25,26 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-around;
+
+    & a {
+        margin: 0 2%;
+    }
+    & input {
+        border: 0;
+        margin-left: 4%;
+        padding: 1%;
+    }
+    & input::placeholder {
+        color: #EEEFEB;
+    }
 }
-header a {margin: 0 2%;}
-header input {
-    border: 0;
-    margin-left: 4%;
-    padding: 1%;
+
+#nav-logo {
+    width: 250px;
+
+    & img {width: 100%;}
 }
-header input::placeholder {color: #EEEFEB;}
-#nav-logo {width: 250px;}
-#nav-logo img {width: 100%;}
+
 #nav-bar {
     width: 70%;
     display: flex;
@@ -48,30 +60,39 @@ header input::placeholder {color: #EEEFEB;}
     border: 0;
     z-index: 2;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2)
-}
-#menu-button span {
+
+    & span {
     position: absolute;
     width: 30px;
     height: 1px;
     left: 5px;
 }
-#menu-button span:nth-child(1) {
-    transform: translateY(10px);
-}
-#menu-button span:nth-child(2) {
-    transform: translateY(-10px);
-}
 
+    & span:nth-child(1) {
+        transform: translateY(10px);
+    }
+
+    & span:nth-child(2) {
+        transform: translateY(-10px);
+    }
+}
 
 #content {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     position: relative;
+    & #content-inside {
+        padding: 0 5%;
+        & #page-description {
+            padding: 5% 5% 2% 5%;
+            & article {font-size: xx-large;}
+        }
+        & .page-content {
+            padding: 0 5%;
+        }
+    }
 }
-#content-inside {padding: 0 5%;}
-#page-description {padding: 5%;}
-#page-description article {font-size: xx-large;}
 
 footer {
     position: absolute;
@@ -79,27 +100,33 @@ footer {
     background-color: #f0f0f0;
     display: flex;
     margin-top: 5%;
+
+    &  div {}
 }
-footer div {}
-#social-media {text-align: center; width: 50%;}
-#social-media p {padding: 5%; margin: 0; background-image: url(../img/gold.png);}
-#social-media div {
-    display: flex;
-    justify-content: space-around;
-    padding: 2%;
+#social-media {
+    text-align: center; width: 50%;
+    & p {padding: 5%; margin: 0; background-image: url(../img/gold.png);}
+    & div {
+        display: flex;
+        justify-content: space-around;
+        padding: 2%;
+
+        & img {width: 25%; border-radius: 50%;}
+    }
 }
-#social-media div a img {width: 25%; border-radius: 50%;}
 
 #communication {
     width: 50%;
     padding: 2% 5%;
     text-align: end;
+
+    & a {}
 }
-#communication a {}
 
 @media screen and (max-width: 800px) {
     #menu-button {
         display: block;
+        margin: 0 30px;
     }
     #nav-bar {
         position: absolute;
@@ -136,6 +163,10 @@ footer div {}
         width: 100%;
         margin-left: 10px;
     }
+    #nav-logo {
+        width: 200px;
+        margin: 0;
+    }
 
     footer {flex-direction: column-reverse;}
     #communication {
@@ -145,6 +176,9 @@ footer div {}
     }
     #communication p {margin: 5px;}
 
-    #social-media {width: 100%;}
-    #social-media p {display: none;}
+    #social-media {
+        width: 100%;
+
+        p {display: none;}
+    }
 }
