@@ -6,8 +6,21 @@
     grid-gap: 20px;
 }
 
-.event {padding: 5%;}
-.event p {font-size: smaller;}
+.event {
+    padding: 5%;}
+     p {font-size: smaller;}
+}
 
+@media screen and (max-width: 426px) {
+    #content-inside > div:nth-child(2) {
+        padding: 2% 5%;
+    }
 
-/* Event page css */
+    .events-content {
+        grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+        grid-gap: 0;
+    }
+
+    .event {padding: 0%;}
+
+}
