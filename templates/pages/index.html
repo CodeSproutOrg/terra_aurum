@@ -33,6 +33,7 @@
 <div id="content-inside">
     <div class="main-events-block">
         <h2 class="color">Pripravované podujatia</h2>
+         {% if events %}
         <div id="main-events">
             {% for event in events %}
             <div class="main-event">
@@ -47,6 +48,9 @@
             </div>
             {% endfor %}
         </div>
+        {% else %}
+        <div>Nic nove</div>
+        {% endif %}
     </div>
     <div class="contact-form sb-color">
         <div class="contact-form-title s-color">

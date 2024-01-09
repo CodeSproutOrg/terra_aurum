@@ -12,7 +12,6 @@ button {
     font-size: large;
 }
 
-
 .color {color: #B2863A;}
 .s-color {color: #EEEFEB;}
 .t-color {color: #634411;}
@@ -83,10 +82,17 @@ header {
     flex-direction: column;
     min-height: 100vh;
     position: relative;
+    & #content-inside {
+        padding: 0 5%;
+        & #page-description {
+            padding: 5% 5% 2% 5%;
+            & article {font-size: xx-large;}
+        }
+        & .page-content {
+            padding: 0 5%;
+        }
+    }
 }
-#content-inside {padding: 0 5%;}
-#page-description {padding: 5% 5% 2% 5%;}
-#page-description article {font-size: xx-large;}
 
 footer {
     position: absolute;
@@ -94,24 +100,28 @@ footer {
     background-color: #f0f0f0;
     display: flex;
     margin-top: 5%;
-}
-footer div {}
-#social-media {text-align: center; width: 50%;}
-#social-media p {padding: 5%; margin: 0; background-image: url(../img/gold.png);}
-#social-media div {
-    display: flex;
-    justify-content: space-around;
-    padding: 2%;
 
-    & img {width: 25%; border-radius: 50%;}
+    &  div {}
+}
+#social-media {
+    text-align: center; width: 50%;
+    & p {padding: 5%; margin: 0; background-image: url(../img/gold.png);}
+    & div {
+        display: flex;
+        justify-content: space-around;
+        padding: 2%;
+
+        & img {width: 25%; border-radius: 50%;}
+    }
 }
 
 #communication {
     width: 50%;
     padding: 2% 5%;
     text-align: end;
+
+    & a {}
 }
-#communication a {}
 
 @media screen and (max-width: 800px) {
     #menu-button {
@@ -166,6 +176,9 @@ footer div {}
     }
     #communication p {margin: 5px;}
 
-    #social-media {width: 100%;}
-    #social-media p {display: none;}
+    #social-media {
+        width: 100%;
+
+        p {display: none;}
+    }
 }
