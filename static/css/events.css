@@ -4,12 +4,23 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
     grid-gap: 20px;
+
+    .event {
+        background-color: #EEEFEB;
+        padding: 5%;
+        & .event-header {
+            & a {
+                & h4 {
+                    margin: 20px 0 0 0;
+                    height: 100px;
+                }
+            }
+        }
+        p {font-size: smaller;}
+    }
 }
 
-.event {
-    padding: 5%;}
-     p {font-size: smaller;}
-}
+
 
 @media screen and (max-width: 426px) {
     #content-inside > div:nth-child(2) {

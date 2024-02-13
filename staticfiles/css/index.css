@@ -74,9 +74,9 @@
         padding: 1% 2%;
         margin: 1%;
     }
-
     & p {
         margin-top: 5px;
+        padding: 0 1%;
     }
 }
 

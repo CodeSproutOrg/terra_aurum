@@ -7,8 +7,16 @@
 }
 
 .event {
-    padding: 5%;}
-     p {font-size: smaller;}
+    background-color: #EEEFEB;
+    padding: 5%;
+    & .event-header {
+        & a {
+            & h3 {
+                margin: 0;
+            }
+        }
+    }
+    p {font-size: smaller;}
 }
 
 @media screen and (max-width: 426px) {
