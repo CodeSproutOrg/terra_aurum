@@ -1,6 +1,5 @@
 from datetime import datetime, timedelta
 
-
 from django.db.models import Q
 
 from core.models import Event
