@@ -58,22 +58,16 @@ header {
         position: relative;
         border: 0;
         z-index: 2;
-        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2)
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 
         & span {
-        position: absolute;
-        width: 30px;
-        height: 1px;
-        left: 5px;
-    }
-
-        & span:nth-child(1) {
-            transform: translateY(10px);
+            position: absolute;
+            width: 30px;
+            height: 1px;
+            left: 5px;
         }
-
-        & span:nth-child(2) {
-            transform: translateY(-10px);
-        }
+        & span:nth-child(1) {transform: translateY(10px);}
+        & span:nth-child(2) {transform: translateY(-10px);}
     }
 
     /* Input */
@@ -143,45 +137,54 @@ footer {
     width: 50%;
     padding: 2% 5%;
     text-align: end;
-
-    & a {}
 }
 
 /* Media */
 @media screen and (max-width: 800px) {
-    #menu-button {
-        display: block;
-        margin: 0 30px;
-    }
-    #nav-bar {
-        position: absolute;
-        left: -400px;
-        top: 0;
-        flex-direction: column;
-        align-items: flex-start;
-        width: 350px;
-        padding: 100px 20px 20px 20px;
-        background-color: #B2863A;
-        z-index: 1;
-        transition: transform .5s;
-    }
-    #nav-bar a {color: white;}
-
     header {
         justify-content: space-between;
         padding: 0 5%;
-    }
-    header div a {
-        width: 100%;
-        margin-left: 30px;
-        margin-top: 10px;
-    }
-    #header.open #nav-bar {
-        transform: translateX(100%);
+
+        & div a {
+            width: 100%;
+            margin-left: 30px;
+            margin-top: 10px;
+        }
+        & #menu-button {
+            display: block;
+            margin: 0 30px;
+        }
+        & #menu-button.closed {
+            display: none;
+        }
+        & #nav-bar {
+            transform: translateX(100%);
+            position: absolute;
+            right: -200px;
+            top: 0;
+            flex-direction: column;
+            align-items: flex-start;
+            width: 350px;
+            padding: 50px 20px 20px 20px;
+            background-color: var(--main-color);
+            z-index: 1;
+            transition: transform .5s;
+
+            & a {
+                color: var(--s-color);
+                margin: 1% 2%;
+                padding: 0 2%;
+                width: 40%;
+            }
+        }
+        & #nav-bar.open {
+            transform: unset;
+        }
     }
 
     footer {font-size: 14px;}
 }
+
 @media screen and (max-width: 426px) {
     header div a {
         width: 100%;

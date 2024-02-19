@@ -185,20 +185,19 @@
 
 /* Media */
 @media screen and (max-width: 800px) {
-    #quote-section {margin-top: 2%;}
-    #quote-section p {font-size: 14px;}
-    .event-content p {font-size: 14px;}
-
     #terra-aurum {
-        background-image: none;
-        min-height: unset;
+        & div {
+            width: 100%;
+        }
     }
-    #terra-aurum div {
-        width: 100%;
+    #quote-section {
+        margin-top: 2%;
+        & p {font-size: 14px;}
     }
 
-    .event-content a {
-        width: 100%;
+    .event-content {
+        & p {font-size: 14px;}
+        & a {width: 100%;}
     }
 
     .contact-form form div > input,textarea {
