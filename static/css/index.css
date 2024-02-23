@@ -7,7 +7,6 @@
 
 /* Index webpage  */
 #terra-aurum {
-    display: flex;
     text-align: center;
     background-image: url(../img/main.jpg);
     background-repeat: no-repeat;
@@ -51,52 +50,52 @@
     flex-direction: column;
     color: var(--s-color);
      & h2 {
+        padding: 1%;
         margin-bottom: 0;
     }
 }
 
 #main-events {
     display: flex;
-    flex: 1;
     flex-wrap: nowrap;
     overflow: hidden;
-    overflow-x: scroll;
-    scroll-snap-type: x mandatory;
-}
-.main-event {
-    min-width: 95%;
-    margin: 5% 5% 0 0;
-    scroll-snap-align: center;
-    background-color: var(--background-color);
+    padding: 1%;
 
-    & .main-event-header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        height: 15%;
-        padding: 5% 5% 0 5%;
+    & .main-event {
+        min-width: 100%;
+        margin-top: 5%;
+        scroll-snap-align: center;
+        background-color: var(--background-color);
+        transition: transform 5s;
+
+        & .main-event-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 15%;
+            padding: 5% 5% 0 5%;
+        }
+
+        .event-content {
+            height: 70%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            & p {
+                padding: 0 5%;
+            };
+
+            & a {
+                width: 33%;
+                text-align: center;
+                font-style: italic;
+                padding: 1% 2%;
+                margin: 5%;
+            };
+        };
     }
-
-    .event-content {
-        height: 70%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-
-        & p {
-            padding: 0 5%;
-        };
-
-        & a {
-            width: 33%;
-            text-align: center;
-            font-style: italic;
-            padding: 1% 2%;
-            margin: 5%;
-        };
-    };
 }
-
 /* Contact form */
 .contact-form {
     padding: 0 10%;
