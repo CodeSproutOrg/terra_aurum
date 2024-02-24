@@ -24,35 +24,12 @@
         <div class="documents-block">
             <h2>Dokumenty na Dispozícii</h2>
             <ul>
+                {% for document in documents %}
                 <li>
-                    <a href="/dokumenty/statut.pdf">Štatút Združenia</a>
-                    <p>
-                        Naša organizácia riadi svoje aktivity v súlade so stanovami,
-                        ktoré určujú naše ciele, práva a povinnosti.
-                    </p>
+                    <h4>{{ document }}</h4>
+                    <a href="/documents/{{ document }}">Stiahnuť</a>
                 </li>
-                <li>
-                    <a href="/dokumenty/vyrocne-spravy">Výročné Správy</a>
-                    <p>
-                        Pravidelne pripravujeme výročné správy, ktoré obsahujú
-                        prehľad našich aktivít a dosiahnutých výsledkov počas každého
-                        kalendárneho roka.
-                    </p>
-                </li>
-                <li>
-                    <a href="/dokumenty/projekty-programy">Projekty a Programy</a>
-                    <p>
-                        Tu môžete nájsť podrobnosti o našich rôznych projektoch a
-                        programoch, ktoré sme vykonali alebo plánujeme realizovať v budúcnosti.
-                    </p>
-                </li>
-                <li>
-                    <a href="/dokumenty/formulare-oznamenia">Formuláre a Oznámenia</a>
-                    <p>
-                        Pre našich členov a záujemcov sme pripravili rôzne
-                        formuláre a oznámenia, ktoré im uľahčujú účasť v našich iniciatívach a projektov.
-                    </p>
-                </li>
+                {% endfor %}
             </ul>
         </div>
     </div>

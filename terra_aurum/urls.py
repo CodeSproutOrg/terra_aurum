@@ -11,7 +11,9 @@ urlpatterns = [
     path('events', views.events, name='events'),
     path('events/<slug:slug>/', views.event, name='event'),
     path('contacts', views.contacts, name='contacts'),
+
     path('documents', views.documents, name='documents'),
+    path('documents/<str:file_name>/', views.download_file, name='download_file'),
 
     path(r'404', views.view_404),
 

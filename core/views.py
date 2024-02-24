@@ -1,8 +1,7 @@
 from django.shortcuts import render, redirect
 
 from core.forms import ContactForm
-from core.functions import get_upcoming_events, sent_email, get_event, get_future_and_past_events
-
+from core import functions
 
 template_folder = 'pages'
 menu = {
@@ -18,12 +17,12 @@ def index(request):
     data = {
         "title": "TERRA-AURUM",
         "menu": menu,
-        'events': get_upcoming_events()
+        'events': functions.get_upcoming_events()
     }
     if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():
-            sent_email(form)
+            functions.sent_email(form)
             return redirect('/')
     else:
         form = ContactForm()
@@ -40,7 +39,7 @@ def about_us(request):
 def event(request, slug):
     template = f'{template_folder}/events/event.html'
 
-    this_event = get_event(slug=slug)
+    this_event = functions.get_event(slug=slug)
     data = {
         "title": this_event.title,
         "menu": menu,
@@ -53,7 +52,7 @@ def events(request):
     template = f'{template_folder}/events/events.html'
     data = {"title": "PODUJATIA", "menu": menu}
 
-    past_events, future_events = get_future_and_past_events()
+    past_events, future_events = functions.get_future_and_past_events()
     data['past_events'] = past_events
     data['future_events'] = future_events
 
@@ -69,8 +68,17 @@ def contacts(request):
 
 def documents(request):
     template = f'{template_folder}/documents.html'
-    data = {"title": "DOKUMENTY", "menu": menu}
+    data = {
+        "title": "DOKUMENTY",
+        "menu": menu,
+        'documents': functions.get_documents_list()
+    }
     return render(request, template, context=data)
+
+
+def download_file(request, file_name):
+    response = functions.providing_files_for_download_func(file_name)
+    return response
 
 
 def view_404(request, exception):
