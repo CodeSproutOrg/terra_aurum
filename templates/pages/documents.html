@@ -26,8 +26,9 @@
             <ul>
                 {% for document in documents %}
                 <li>
-                    <h4>{{ document }}</h4>
-                    <a href="/documents/{{ document }}">Stiahnuť</a>
+                    <h4>{{ document.file_name }}</h4>
+                    <a href="{% url 'download_file' document.id %}">Stiahnuť</a>
+                    <p>{{ document.description }}</p>
                 </li>
                 {% endfor %}
             </ul>

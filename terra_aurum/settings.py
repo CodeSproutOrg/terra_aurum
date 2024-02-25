@@ -17,6 +17,8 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'storages',
+    'django_cleanup',
     'django.contrib.staticfiles',
     'core.apps.CoreConfig'
 ]

@@ -76,9 +76,8 @@ def documents(request):
     return render(request, template, context=data)
 
 
-def download_file(request, file_name):
-    response = functions.providing_files_for_download_func(file_name)
-    return response
+def download_file(request, file_id):
+    return functions.providing_files_for_download_func(file_id)
 
 
 def view_404(request, exception):

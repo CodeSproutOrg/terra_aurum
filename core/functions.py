@@ -1,10 +1,10 @@
 from datetime import datetime, timedelta
-import os
 
 from django.db.models import Q
 from django.http import FileResponse
+from django.shortcuts import get_object_or_404
 
-from core.models import Event
+from core.models import Event, FileModel
 
 
 def get_event(slug):
@@ -28,27 +28,15 @@ def get_future_and_past_events():
     return past_events, future_events
 
 
-def get_files_from_folder(folder_path):
-    return os.listdir(folder_path)
-
-
-def is_it_file(folder_path, file):
-    return os.path.isfile(os.path.join(folder_path, file))
-
-
 def get_documents_list():
-    folder_path = './static/documents'
-    files_in_folder = get_files_from_folder(folder_path)
-    files = [f for f in files_in_folder if is_it_file(folder_path, f)]
-    files = [file.split('.')[0] for file in files]
-    return files
+    return FileModel.objects.all()
 
 
-def providing_files_for_download_func(file_name):
-    base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    document_path = f'{base_dir}/static/documents/{file_name}'
-    open_document = open(document_path, 'rb')
-    response = FileResponse(open_document, as_attachment=True, filename=file_name)
+def providing_files_for_download_func(file_id):
+    file_object = get_object_or_404(FileModel, id=file_id)
+    file_path = file_object.file.path
+    response = FileResponse(open(file_path, 'rb'))
+    response['Content-Disposition'] = f'attachment; filename="{file_object.file.name}"'
     return response
 
 

@@ -8,12 +8,13 @@ handler404 = 'core.views.view_404'
 urlpatterns = [
     path('', views.index, name='index'),
     path('about-us', views.about_us, name='about-us'),
-    path('events', views.events, name='events'),
-    path('events/<slug:slug>/', views.event, name='event'),
     path('contacts', views.contacts, name='contacts'),
 
+    path('events', views.events, name='events'),
+    path('events/<slug:slug>/', views.event, name='event'),
+
     path('documents', views.documents, name='documents'),
-    path('documents/<str:file_name>/', views.download_file, name='download_file'),
+    path('download/<int:file_id>/', views.download_file, name='download_file'),
 
     path(r'404', views.view_404),
 
