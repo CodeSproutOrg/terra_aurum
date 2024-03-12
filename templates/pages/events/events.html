@@ -24,6 +24,7 @@
         </div>
     </div>
     <div class="page-content">
+        {% if future_events %}
         <div class="events-block">
             <h2>Budúce Podujatia</h2>
             <div class="events-content">
@@ -42,6 +43,7 @@
                 {% endfor %}
             </div>
         </div>
+        {% endif %}
         {% if past_events %}
         <div class="events-block">
             <h2 class="color">Minulé Podujatia</h2>

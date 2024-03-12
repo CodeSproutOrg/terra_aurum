@@ -1,31 +1,55 @@
+let mainEventsContainer = document.getElementById('main-events');
+let events = document.getElementsByClassName('main-event');
+let totalEvents = events.length;
+let currentIndex = 0;
+
+function undispay_elem(elem) {
+    Array.from(elem.children).forEach(child => {
+        child.style.display = 'none';
+    });
+};
+
+function delete_first_elem() {
+    let deleted_elem = events[0];
+    undispay_elem(deleted_elem);
+    deleted_elem.style.minWidth = 0;
+    setTimeout(function () {
+       mainEventsContainer.removeChild(mainEventsContainer.children[0]);
+    }, 5000);
+};
+
+function generate_next_event() {
+    let current_elem = events[0];
+    let clone_elem = current_elem.cloneNode(true);
+    mainEventsContainer.appendChild(clone_elem);
+};
+
+function start_events() {
+    try {
+        if (currentIndex != totalEvents - 1) {
+            generate_next_event();
+            delete_first_elem();
+            currentIndex += 1;
+        } else {
+            currentIndex = 0
+        }
+    } catch (error) {
+        console.log(error);
+    };
+}
+
+
+if (totalEvents > 1) {
+    setInterval(start_events, 8000);
+};
+
+/* Sidebar menu */
 let MobNavButton = document.getElementById('menu-button');
 let navbar = document.getElementById('nav-bar');
 let header = document.getElementById('header');
 
 MobNavButton.addEventListener('click', OpenMenu);
 document.addEventListener('click', ClosedMenu);
-
-
-let events = document.getElementsByClassName('main-event');
-let totalEvents = events.length;
-let currentIndex = 0;
-
-setInterval(() => {
-    try {
-        if (currentIndex != 0 & currentIndex < totalEvents) {
-            events[currentIndex - 1].style.transform = `translateX(${currentIndex * 100}%)`;
-            events[currentIndex].style.transform = `translateX(-${currentIndex * 100}%)`;
-        } else if (currentIndex == totalEvents) {
-            events[currentIndex - 1].style.transform = `translateX(${currentIndex * 100}%)`;
-            currentIndex = -1
-        }
-        currentIndex = (currentIndex + 1);
-    } catch (error) {
-        console.log("Content not exist" + error);
-    };
-}, 10000);
-
-
 
 function OpenMenu() {
     event.stopPropagation();
