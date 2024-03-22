@@ -18,5 +18,6 @@ urlpatterns = [
 
     path(r'404', views.view_404),
 
+    path('admin/download-db/', views.download_db, name='download_db'),
     path('admin/', admin.site.urls),
 ]

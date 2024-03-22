@@ -31,10 +31,13 @@
                 {% for event in future_events %}
                 <div class="event">
                     <div class="event-header">
+                        <p>{{ event.time }}</p>
+                        {% if event.photo %}
+                            <img src="{{ event.photo.url }}" alt="{{ event.title }}">
+                        {% endif %}
                         <a href="{% url 'event' event.slug %}">
                             <h4>{{ event.title }}</h4>
                         </a>
-                        <p>{{ event.time }}</p>
                     </div>
                     <div class="event-content">
                         <p>{{ event.description|truncatewords:5 }}</p>
@@ -51,10 +54,10 @@
                 {% for event in past_events %}
                 <div class="event">
                     <div class="event-header">
+                        <p>{{ event.time }}</p>
                         <a href="{% url 'event' event.slug %}">
                             <h4 class="color">{{ event.title }}</h4>
                         </a>
-                        <p>{{ event.time }}</p>
                     </div>
                     <div class="event-content">
                         <p>{{ event.description|truncatewords:5 }}</p>

@@ -8,6 +8,9 @@
             <p>{{ event.time }}</p>
         </div>
         <div class="event-content">
+            {% if event.photo %}
+                <img src="{{ event.photo.url }}" alt="{{ event.title }}">
+            {% endif %}
             <p>{{ event.description|linebreaks }}</p>
         </div>
     </div>

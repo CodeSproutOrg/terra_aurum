@@ -1,24 +1,56 @@
 /* Events page css */
-.events-block {}
+.events-block {
+    margin-bottom: 5%;
+    & h2 {
+        border-left: 1px solid var(--s-color);
+        padding: 2%;
+        margin-bottom: 2%;
+        color: var(--s-color);
+    }
+}
 .events-content {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
     grid-gap: 20px;
-}
 
-.event {
-    background-color: #EEEFEB;
-    padding: 5%;
-    & .event-header {
-        & a {
-            & h3 {
-                margin: 0;
+    .event {
+        background-color: var(--background-color);
+        padding: 5%;
+        & .event-header {
+            display: flex;
+            flex-direction: column;
+            & a {
+                & h4 {
+                    color: var(--s-color);
+                    margin: 10px 0 0 0;
+                    height: 70px;
+                }
             }
+            & p {font-style: italic;}
+        }
+        & p {
+            color: var(--s-color);
+            font-size: smaller;
         }
     }
-    p {font-size: smaller;}
 }
 
+/* Event */
+.event-page {
+    padding: 1% 5%;
+    .event-header {
+        color: var(--s-color);
+        border-left: 1px solid var(--s-color);
+        padding: 1% 5%;
+        margin-bottom: 30px;
+    }
+    & .event-content {
+        color: var(--s-color);
+        & img {width: 100%;};
+    }
+}
+
+/* Media */
 @media screen and (max-width: 426px) {
     #content-inside > div:nth-child(2) {
         padding: 2% 5%;
@@ -30,5 +62,4 @@
     }
 
     .event {padding: 0%;}
-
 }

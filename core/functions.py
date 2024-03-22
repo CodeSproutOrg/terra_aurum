@@ -1,7 +1,9 @@
+from pathlib import Path
 from datetime import datetime, timedelta
 
+from django.core.mail import send_mail
 from django.db.models import Q
-from django.http import FileResponse
+from django.http import FileResponse, HttpResponse
 from django.shortcuts import get_object_or_404
 
 from core.models import Event, FileModel
@@ -40,9 +42,38 @@ def providing_files_for_download_func(file_id):
     return response
 
 
+def providing_db_for_download_func():
+    db_file = Path('db.sqlite3')
+    if db_file.exists() and db_file.is_file():
+        with open(db_file, 'rb') as f:
+            response = HttpResponse(f, content_type='application/x-sqlite3')
+            response['Content-Disposition'] = 'attachment; filename=db.sqlite3'
+            return response
+    else:
+        return HttpResponse("SQLite database not found", status=404)
+
+
+def prepare_message(name, email, message):
+    message = f"""
+        {name}\n 
+        {email}\n 
+        {message}
+    """
+    return message
+
+    
 def sent_email(form):
-    name = form.cleaned_data['name']
+    name = f'{form.cleaned_data["name"]} {form.cleaned_data["surname"]}'
     email = form.cleaned_data['email']
     message = form.cleaned_data['message']
+    message = prepare_message(name, email, message)
 
-    print(name, email, message)
+    subject = 'Správa'
+    recipient_list = ['vladibuyanov@gmail.com']
+
+    send_mail(
+        subject,
+        message,
+        email,
+        recipient_list
+    )

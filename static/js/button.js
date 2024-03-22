@@ -13,6 +13,7 @@ function delete_first_elem() {
     let deleted_elem = events[0];
     undispay_elem(deleted_elem);
     deleted_elem.style.minWidth = 0;
+    deleted_elem.style.margin = '5% 0px 0px 0px';
     setTimeout(function () {
        mainEventsContainer.removeChild(mainEventsContainer.children[0]);
     }, 5000);

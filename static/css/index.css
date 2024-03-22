@@ -59,15 +59,14 @@
     display: flex;
     flex-wrap: nowrap;
     overflow: hidden;
-    padding: 1%;
 
     & .main-event {
-        min-width: 100%;
-        margin-top: 5%;
+        min-width: 90%;
+        margin: 5% 5% 0 5%;
         scroll-snap-align: center;
         background-color: var(--background-color);
-        transition: min-width 5s;
-        transform: translateX(-100%);
+        transition: min-width 5s, margin 5s;
+        transform: translateX(-110%);
 
         & .main-event-header {
             display: flex;

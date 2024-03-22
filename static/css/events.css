@@ -18,13 +18,12 @@
         padding: 5%;
         & .event-header {
             display: flex;
-            flex-direction: column-reverse;
-
+            flex-direction: column;
             & a {
                 & h4 {
                     color: var(--s-color);
                     margin: 10px 0 0 0;
-                    height: 100px;
+                    height: 70px;
                 }
             }
             & p {font-style: italic;}
@@ -45,7 +44,10 @@
         padding: 1% 5%;
         margin-bottom: 30px;
     }
-    .event-content {color: var(--s-color);}
+    & .event-content {
+        color: var(--s-color);
+        & img {width: 100%;};
+    }
 }
 
 /* Media */
