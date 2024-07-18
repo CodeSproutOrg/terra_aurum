@@ -2,8 +2,7 @@
 .events-block {
     margin-bottom: 5%;
     & h2 {
-        border-left: 1px solid var(--s-color);
-        padding: 2%;
+        padding: 2% 0;
         margin-bottom: 2%;
         color: var(--s-color);
     }
@@ -13,12 +12,13 @@
     grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
     grid-gap: 20px;
 
-    .event {
+    & .event {
         background-color: var(--background-color);
-        padding: 5%;
         & .event-header {
             display: flex;
             flex-direction: column;
+            background-size: cover;
+            padding: 10%;
             & a {
                 & h4 {
                     color: var(--s-color);
@@ -28,6 +28,7 @@
             }
             & p {font-style: italic;}
         }
+        & .event-content {padding: 10%;}
         & p {
             color: var(--s-color);
             font-size: smaller;
@@ -36,18 +37,20 @@
 }
 
 /* Event */
-.event-page {
-    padding: 1% 5%;
-    .event-header {
+#content > .event-header {
         color: var(--s-color);
-        border-left: 1px solid var(--s-color);
-        padding: 1% 5%;
-        margin-bottom: 30px;
-    }
-    & .event-content {
+        padding: 150px 5% 0 5%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        min-height: 400px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+}
+#content > .event-content {
         color: var(--s-color);
         & img {width: 100%;};
-    }
+        padding: 5%;
 }
 
 /* Media */
@@ -55,11 +58,9 @@
     #content-inside > div:nth-child(2) {
         padding: 2% 5%;
     }
-
     .events-content {
         grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
         grid-gap: 0;
     }
-
     .event {padding: 0%;}
 }
