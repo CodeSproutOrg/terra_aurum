@@ -1,9 +1,0 @@
-#container {
-    & #header {
-        & .object-tools {
-         margin-top: 0;
-         position: unset;
-         float: left;
-        }
-    }
-}

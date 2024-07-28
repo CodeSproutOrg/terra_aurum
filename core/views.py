@@ -3,13 +3,14 @@ from django.shortcuts import render, redirect
 from core.forms import ContactForm
 from core import functions
 
-template_folder = 'pages'
+app = '/app'
+template_folder = 'core/pages'
 data = {
     'menu': {
-        'O NÁS': '/about-us',
-        'PODUJATIA': '/events',
-        'KONTAKTY': '/contacts',
-        'DOKUMENTY': '/documents'
+        'O NÁS': f'{app}/about-us',
+        'PODUJATIA': f'{app}/app/events',
+        'KONTAKTY': f'{app}/app/contacts',
+        'DOKUMENTY': f'{app}/app/documents'
     }
 }
 

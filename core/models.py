@@ -5,8 +5,8 @@ from terra_aurum.settings import FILES_DIR, EVENTS_FOTO_DIR
 
 class Event(models.Model):
     photo = models.ImageField(
-        upload_to=EVENTS_FOTO_DIR,
         blank=True, null=True,
+        upload_to=EVENTS_FOTO_DIR,
         default=f'{EVENTS_FOTO_DIR}/default.jpg'
     )
     title = models.CharField(max_length=200)
