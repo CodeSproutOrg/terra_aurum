@@ -8,9 +8,9 @@ template_folder = 'core/pages'
 data = {
     'menu': {
         'O NÁS': f'{app}/about-us',
-        'PODUJATIA': f'{app}/app/events',
-        'KONTAKTY': f'{app}/app/contacts',
-        'DOKUMENTY': f'{app}/app/documents'
+        'PODUJATIA': f'{app}/events',
+        'KONTAKTY': f'{app}/contacts',
+        'DOKUMENTY': f'{app}/documents'
     }
 }
 
@@ -21,6 +21,7 @@ def index(request):
     data['events'] = functions.get_upcoming_events()
     data['form'] = ContactForm()
 
+    print(data['events'])
     if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():

@@ -1,11 +1,23 @@
+/* style.css */
+:root {
+    --header-color: #eeefeb78;
+    --main-color: #B2863A;
+    --s-color: #EEEFEB;
+    --background-color: rgb(0 0 0 / 13%);
+    --font-size: 18px;
+}
+
 /* Main  elements */
 body {
     margin: 0;
     font-family: "Cinzel", sans-serif;
-    background: rgb(214,201,129);
-    background: linear-gradient(153deg, rgba(214,201,129,1) 10%, rgba(218,174,102,1) 35%, rgba(99,68,17,1) 86%);
+    background: linear-gradient(153deg, rgba(214, 201, 129, 1) 0%, rgba(218, 174, 102, 1) 15%, rgba(99, 68, 17, 1) 90%);
 }
 
+h2 {
+    font-weight: 400;
+    font-size: 30px;
+}
 a {
     text-decoration: none;
     color: #B2863A;
@@ -15,7 +27,6 @@ button {
     border: NONE;
     font-size: large;
 }
-h2 {font-weight: 400;}
 
 .color {color: #B2863A;}
 .s-color {color: #EEEFEB;}
@@ -27,12 +38,11 @@ h2 {font-weight: 400;}
 
 /* Page */
 header {
-    width: 90%;
-    padding: 1% 5%;
+    width: 80%;
+    padding: 1% 10%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: transparent;
     position: absolute;
     z-index: 1;
 
@@ -48,6 +58,7 @@ header {
         justify-content: flex-end;
         & a {
             margin: 0 2%;
+            color: var(--s-color);
         }
         & a:hover {
             border-bottom: 1px solid;
@@ -101,12 +112,16 @@ header {
                 color: var(--s-color);
                 font-size: xx-large;
             }
-            & p {
-                color: var(--s-color);
+            & div {
+                display: flex;
+                flex-direction: column;
+                & p, address, a {
+                    color: var(--s-color);
+                }
             }
         }
         & .page-content {
-            padding: 0 5%;
+            padding: 0 5% 5% 5%;
         }
     }
 }

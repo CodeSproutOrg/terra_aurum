@@ -1,56 +1,42 @@
-/* Colors */
-:root {
-  --main-color: #B2863A;
-  --s-color: #EEEFEB;
-  --background-color: rgb(0 0 0 / 13%);
-}
-
 /* Index webpage  */
 #terra-aurum {
-    text-align: center;
     background-image: url(../img/main.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
     padding-top: 150px;
     margin-bottom: 35px;
 
+    width: 100%;
+
     & div {
-        padding: 5%;
-        margin: 10%;
-        background-color: #eeefeb7d;
+        padding-right: 30%;
+        margin: 10% 10% 5% 10%;
         & h1 {color: var(--main-color);}
-        & h4 {
+        & p {
             color: var(--s-color);
             font-style: italic;
         }
-        & p {color: var(--s-color);}
     }
 }
 
-/* Quote */
-#quote-section {
-    padding: 0% 5%;
-    margin: 0 10% 30px 10%;
-    border-left: 2px solid var(--main-color);
-
+.content-block {
+    padding: 0 10% 5% 10%;
+    color: var(--s-color);
     & p {
-        font-style: italic;
-        font-size: 20px;
-        text-align: left;
-        color: var(--s-color);
+        font-size: var(--font-size);
     }
 }
+
 
 /* Events block */
 .main-events-block {
     min-height: 200px;
     display: flex;
     flex-direction: column;
-    color: var(--s-color);
-    padding: 5% 0;
-     & h2 {
+    & h2 {
         text-align: center;
-        margin: 5% 5% 0 5%;
+        margin: 0;
     }
 }
 
@@ -94,18 +80,23 @@
             };
         };
     }
+    & .no-event {
+        padding: 5% 0;
+        & p {
+            font-size: var(--font-size);
+        }
+    }
 }
 
 /* Contact form */
 .contact-form {
-    background-color: var(--background-color);
-    margin: 5%;
-
     .contact-form-title {
-        padding: 5% 5% 0 5%;
+        padding-bottom: 2%;
+        color: var(--s-color);
     }
 
     & form {
+        background-color: var(--background-color);
         padding: 5%;
         height: 400px;
         display: flex;
@@ -136,9 +127,7 @@
         background-color: var(--s-color);
     }
 }
-.contact-form-title {
-    padding: 1%;
-}
+
 .contact-form form > div {
     padding: 5px;
     width: 98%;

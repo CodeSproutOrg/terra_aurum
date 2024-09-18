@@ -1,4 +1,6 @@
-/venv
-/.idea
+db.sqlite3
 
 /core/static/documents/*
+
+/venv
+/.idea

@@ -1,9 +1,7 @@
-from django.contrib import admin
 from django.urls import path
 
 from core import views
 
-handler404 = 'core.views.view_404'
 
 urlpatterns = [
     path('', views.index, name='index'),
@@ -15,6 +13,4 @@ urlpatterns = [
 
     path('documents', views.documents, name='documents'),
     path('download/<int:file_id>/', views.download_file, name='download_file'),
-
-    path(r'404', views.view_404)
 ]
