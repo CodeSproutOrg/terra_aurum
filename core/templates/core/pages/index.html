@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div id="terra-aurum">
+    <div>
+        <p>
+            "Ak sa zachovajú z minulosti špecifické črty starej slovenskej tvorivosti, nezáleží
+            v skutočnosti na hŕstke tých, ktorí sa o to starajú profesionálne z úradnej povinnosti,
+            ale na uvedomelej vôli slovenského národného kolektívu, ktorý si tak stavia pred oči
+            zrkadlo zobrazujúce smer a intenzitu jeho vlastného prítomného života"
+        </p>
+        <p><strong>Václav Mencl, 1954</strong></p>
+    </div>
+</div>
+<div class="content-block">
+    <h2>Vitajte na stránke Občianskeho združenia Terra Aurum</h2>
+    <p>
+        Hlavným cieľom občianskeho združenia Terra Aurum je
+        zachovanie ľudovej kultúry ako zlatého dedičstva krajiny
+        prostredníctvom rezilienčných postupov v činnosti a aktivitách
+        obyvateľov vidieckych sídel, pomocou podpory aktivít v
+        sídle zameraných na sociálny, kultúrny, športový, vzdelávací,
+        ekonomický rozvoj, rozvoj turizmu a i. rozvoj s dôrazom na
+        rešpektovanie, ochranu a udržiavanie ľudovej kultúry, zvykov
+        a tradícií sídla, hodnôt a potenciálu regiónu a kultúrneho dedičstva.
+    </p>
+</div>
+<div class="content-block main-events-block">
+    <h2>Pripravované podujatia</h2>
+    <div id="main-events">
+        {% if events %}
+        {% for event in events %}
+        <div class="main-event">
+            <div class="main-event-header">
+                <h3>{{ event.title }}</h3>
+                <p>{{ event.time }}</p>
+            </div>
+            <div class="event-content">
+                <p>{{ event.description|truncatewords:80 }}</p>
+                <a href="{% url 'event' event.slug %}" class="sb-color s-color">Prečítajte si viac o podujatí</a>
+            </div>
+        </div>
+        {% endfor %}
+        {% else %}
+        <div class="no-event">
+            <p>Stačí chvíľu počkať, a určite sa vrátime s novými akciami!
+            <p>
+        </div>
+        {% endif %}
+    </div>
+</div>
+<div class="content-block contact-form">
+    <div class="contact-form-title">
+        <h2 class="">Napíšte nám</h2>
+        <p>
+            Kontaktujte nás prostredníctvom tohto formulára a určite odpovieme
+            na vaše požiadavky a budeme venovať pozornosť vašim spätným väzbám.
+        </p>
+    </div>
+    <form method="post">
+        {% csrf_token %}
+        <div class="form-full-name">
+            <div>
+                {{ form.name.label_tag }}
+                {{ form.name }}
+            </div>
+            <div>
+                {{ form.surname.label_tag }}
+                {{ form.surname }}
+            </div>
+        </div>
+        <div>
+            {{ form.email.label_tag }}
+            {{ form.email }}
+        </div>
+        <div>
+            {{ form.message.label_tag }}
+            {{ form.message }}
+        </div>
+        <button class="color" type="submit">Odoslat'</button>
+    </form>
+</div>
+{% endblock %}

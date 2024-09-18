@@ -1,17 +1,20 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title }}</title>
-    {% include 'parts/css.html' %}
-    {% include 'parts/js.html' %}
+    <link rel="icon" type="image/x-icon" href="{% static 'img/favicon.png' %}">
+    {% include './core/parts/css.html' %}
+    {% include './core/parts/js.html' %}
 </head>
 <body>
-    <header id="header" class="b-color">{% include 'parts/header.html' %}</header>
+    <header id="header">{% include './core/parts/header.html' %}</header>
     <main>
         <div id="content">{% block content %}{% endblock %}</div>
-        <footer class="b-color">{% include 'parts/footer.html' %}</footer>
+        <footer>{% include './core/parts/footer.html' %}</footer>
     </main>
 </body>
 </html>

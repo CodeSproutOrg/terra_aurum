@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% if event.photo %}
+<div class="event-header" style="background-image: url('{{ event.photo.url }}');">
+    <h1>{{ event.title }}</h1>
+    <p>{{ event.time }}</p>
+</div>
+{% else %}
+<div class="event-header">
+    <h1>{{ event.title }}</h1>
+    <p>{{ event.time }}</p>
+</div>
+{% endif %}
+<div class="event-content">
+    <p>{{ event.description|linebreaks }}</p>
+</div>
+{% endblock %}

@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div id="content-inside">
+    <div id="page-description">
+        <article>{{ title }}</article>
+        <div>
+            <p>
+                Vitajte v sekcii "Podujatia"! Tu nájdete informácie o minulých a plánovaných podujatiach
+                našej organizácie. Vždy sme radi, keď vás vidíme na našich akciách, a dúfame, že každá z
+                nich vám prinesie radosť a uspokojenie.
+            </p>
+            <p>
+                Nezabudnite sledovať aktualizácie, aby ste boli informovaní o najnovších udalostiach a
+                plánovaných podujatiach. Snažíme sa vytvoriť pre vás nezabudnuteľné zážitky a tešíme sa
+                na vás na každom z našich podujatí!
+
+                Ďakujeme vám za vašu podporu a účasť na živote našej organizácie.
+            </p>
+        </div>
+    </div>
+    <div class="page-content">
+        {% if future_events %}
+        <div class="events-block">
+            <h2>Budúce Podujatia</h2>
+            <div class="events-content">
+                {% for event in future_events %}
+                <div class="event">
+                    <div class="event-header" {% if event.photo %} style="background-image: url('{{ event.photo.url }}');" {% endif %}>
+                        <p>{{ event.time }}</p>
+                        <a href="{% url 'event' event.slug %}">
+                            <h4>{{ event.title }}</h4>
+                        </a>
+                    </div>
+                    <div class="event-content">
+                        <p>{{ event.description|truncatewords:10 }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+        {% if past_events %}
+        <div class="events-block">
+            <h2 class="color">Minulé Podujatia</h2>
+            <div class="events-content">
+                {% for event in past_events %}
+                <div class="event">
+                    <div class="event-header">
+                        <p>{{ event.time }}</p>
+                        <a href="{% url 'event' event.slug %}">
+                            <h4 class="color">{{ event.title }}</h4>
+                        </a>
+                    </div>
+                    <div class="event-content">
+                        <p>{{ event.description|truncatewords:10 }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

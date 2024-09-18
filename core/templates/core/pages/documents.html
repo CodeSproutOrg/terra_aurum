@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div id="content-inside">
+    <div id="page-description">
+        <article>{{ title }}</article>
+        <div>
+            <p>
+                Vitajte na stránke s dokumentmi Občianskeho združenia Terra Aurum.
+                Naša organizácia je zameraná na ochranu a uchovávanie kultúrneho
+                dedičstva a hodnôt našej krajiny. Na tejto stránke nájdete rôzne
+                dokumenty, ktoré sú dôležité pre našu činnosť a našich členov.
+            </p>
+            <p>
+                Naším cieľom je zabezpečiť transparentnosť  a spravodlivosť vo všetkých
+                našich aktivitách, a preto sme sa rozhodli zverejniť tieto dokumenty pre
+                verejnosť. Ak máte akékoľvek otázky alebo potrebujete ďalšie informácie
+                o našej činnosti, neváhajte nás kontaktovať. Ďakujeme za vašu podporu a
+                záujem o naše úsilie na ochranu a uchovávanie našej kultúrnej dedičiny.
+            </p>
+        </div>
+    </div>
+    <div class="page-content">
+        <div class="documents-block">
+            <h2>Dokumenty na Dispozícii</h2>
+            <ul>
+                {% for document in documents %}
+                <li>
+                    <h4>{{ document.file_name }}</h4>
+                    <a href="{% url 'download_file' document.id %}">Stiahnuť</a>
+                    <p>{{ document.description }}</p>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}
