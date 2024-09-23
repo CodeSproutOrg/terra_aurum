@@ -28,7 +28,9 @@
             }
             & p {font-style: italic;}
         }
-        & .event-content {padding: 10%;}
+        & .event-content {
+            padding: 10%;
+        }
         & p {
             color: var(--s-color);
             font-size: smaller;
@@ -51,6 +53,29 @@
         color: var(--s-color);
         & img {width: 100%;};
         padding: 5%;
+}
+
+#reservation_form {
+    & form {
+        margin-top: 3%;
+        padding: 2%;
+        background-color: var(--background-color);
+        & p {
+            display: flex;
+            flex-direction: column;
+            & label {
+                padding-bottom: 1%;
+            }
+            & input {
+                width: 250px;
+                padding: 5px;
+            }
+        }
+        & .button {
+            margin-top: 1%;
+            padding: 5px 20px;
+        }
+    }
 }
 
 /* Media */

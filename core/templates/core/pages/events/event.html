@@ -5,14 +5,38 @@
 <div class="event-header" style="background-image: url('{{ event.photo.url }}');">
     <h1>{{ event.title }}</h1>
     <p>{{ event.time }}</p>
+    {% if event.requires_reservation %}
+        <p>Zostalo lístkov: {{ available_tickets }}</p>
+    {% else %}
+        <p>{{ message }}</p>
+    {% endif %}
 </div>
 {% else %}
 <div class="event-header">
     <h1>{{ event.title }}</h1>
     <p>{{ event.time }}</p>
+    {% if event.requires_reservation %}
+        <p>Zostalo lístkov: {{ available_tickets }}</p>
+    {% else %}
+        <p>{{ message }}</p>
+    {% endif %}
 </div>
 {% endif %}
 <div class="event-content">
     <p>{{ event.description|linebreaks }}</p>
+    <div id="reservation_form">
+    {% if event.requires_reservation %}
+        {% if available_tickets > 0 %}
+            <form method="POST">
+                <h2>Rezervovať lístky</h2>
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button class='button' type="submit">Potvrdiť</button>
+            </form>
+        {% else %}
+            <p>Všetky lístky sú vypredané.</p>
+        {% endif %}
+    {% endif %}
+    </div>
 </div>
 {% endblock %}
