@@ -1,6 +1,8 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
+from django.contrib import messages
 
-from core.forms import ContactForm
+from core.models import Event
+from core.forms import ContactForm, ReservationForm
 from core import functions
 
 app = '/app'
@@ -21,7 +23,6 @@ def index(request):
     data['events'] = functions.get_upcoming_events()
     data['form'] = ContactForm()
 
-    print(data['events'])
     if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():
@@ -31,18 +32,42 @@ def index(request):
     return render(request, template, context=data)
 
 
+def event(request, slug):
+    template = f'{template_folder}/events/event.html'
+    this_event = get_object_or_404(Event, slug=slug)
+    data = {
+        'title': this_event.title,
+        'event': this_event,
+        'available_tickets': this_event.available_tickets
+    }
+
+    if this_event.requires_reservation:
+        form = ReservationForm(request.POST or None)
+
+        if request.method == 'POST' and form.is_valid():
+            reservation = form.save(commit=False)
+            reservation.event = this_event
+
+            if reservation.tickets <= this_event.available_tickets:
+                this_event.available_tickets -= reservation.tickets
+                this_event.save()
+                reservation.save()
+                messages.success(request, 'Vaša rezervácia bola úspešne vykonaná')
+                return redirect('event', slug=slug)
+            else:
+                message = f'Bohužiaľ, nie je dostatok lístkov. K dispozícii je len {this_event.available_tickets} lístkov.'
+                messages.error(request, message)
+
+        data['form'] = form
+
+    else:
+        data['message'] = "Na toto podujatie nie je potrebné rezervovať si vstupenky."
+
+    return render(request, template, context=data)
+
 def about_us(request):
     template = f'{template_folder}/about-us.html'
     data['title'] = "O NÁS"
-    return render(request, template, context=data)
-
-
-def event(request, slug):
-    template = f'{template_folder}/events/event.html'
-
-    this_event = functions.get_event(slug=slug)
-    data['title'] = this_event.title
-    data['event'] = this_event
     return render(request, template, context=data)
 
 

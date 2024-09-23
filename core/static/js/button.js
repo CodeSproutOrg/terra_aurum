@@ -42,6 +42,9 @@ function start_events() {
 
 if (totalEvents > 1) {
     setInterval(start_events, 8000);
+} else {
+    let event = document.getElementsByClassName('main-event')[0]
+    event.style.transform = 'translateX(0)';
 };
 
 /* Sidebar menu */

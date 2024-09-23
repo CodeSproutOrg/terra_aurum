@@ -14,12 +14,28 @@ class Event(models.Model):
     time = models.DateTimeField()
     slug = models.SlugField(unique=True)
 
+    # Reservation system
+    requires_reservation = models.BooleanField(default=False)
+    total_tickets = models.PositiveIntegerField(default=0)
+    available_tickets = models.PositiveIntegerField(default=0)
+
     def save(self, *args, **kwargs):
         self.slug = slugify(f"{self.title} {self.time.date()}")
         super().save(*args, **kwargs)
 
     def __str__(self):
         return self.title
+
+
+class Reservation(models.Model):
+    event = models.ForeignKey(Event, on_delete=models.CASCADE, related_name='reservations')
+    name = models.CharField(max_length=100)
+    email = models.EmailField()
+    tickets = models.PositiveIntegerField()
+    reserved_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f'Reservation for {self.name} - {self.event.title}'
 
 
 class FileModel(models.Model):
