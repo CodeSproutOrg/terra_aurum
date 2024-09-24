@@ -1,18 +1,21 @@
 /* style.css */
 :root {
-    --header-color: #eeefeb78;
     --main-color: #B2863A;
     --s-color: #EEEFEB;
     --background-color: rgb(0 0 0 / 13%);
     --font-size: 18px;
+
+    --grey-light: #887f77;
 }
 
-/* Main  elements */
-body {
-    margin: 0;
-    font-family: "Cinzel", sans-serif;
-    background: linear-gradient(153deg, rgba(214, 201, 129, 1) 0%, rgba(218, 174, 102, 1) 15%, rgba(99, 68, 17, 1) 90%);
-}
+.color {color: var(--main-color);}
+.s-color {color: var(--s-color);}
+
+.t-color {color: #634411;}
+.b-color {background-color: #EEEFEB;}
+.sb-color {background-color: #B2863A;}
+.tb-color {background-color: #634411;}
+.light-font {font-weight: 400;}
 
 h2 {
     font-weight: 400;
@@ -20,7 +23,7 @@ h2 {
 }
 a {
     text-decoration: none;
-    color: #B2863A;
+    color: var(--b-color);
 }
 button {
     font-family: "Cinzel", sans-serif;
@@ -28,13 +31,13 @@ button {
     font-size: large;
 }
 
-.color {color: #B2863A;}
-.s-color {color: #EEEFEB;}
-.t-color {color: #634411;}
-.b-color {background-color: #EEEFEB;}
-.sb-color {background-color: #B2863A;}
-.tb-color {background-color: #634411;}
-.light-font {font-weight: 400;}
+
+/* Main  elements */
+body {
+    margin: 0;
+    font-family: "Cinzel", sans-serif;
+    background: var(--main-color);
+}
 
 /* Page */
 header {
@@ -47,8 +50,8 @@ header {
     z-index: 1;
 
     & #nav-logo {
-            width: 250px;
-            & img {width: 100%;}
+        width: 250px;
+        & img {width: 100%;}
     }
 
     & #nav-bar {
@@ -154,6 +157,24 @@ footer {
     width: 50%;
     padding: 2% 5%;
     text-align: end;
+}
+
+/* Documents block */
+.documents-block {
+    padding: 5%;
+    background-color: var(--background-color);
+    & h2 {
+        margin: 0 0 5% 0;
+        color: var(--s-color);
+    }
+    & ul {
+        color: var(--s-color);
+        a {
+            color: var(--s-color);
+            font-style: italic;
+            text-decoration: underline;
+        }
+    }
 }
 
 /* Media */

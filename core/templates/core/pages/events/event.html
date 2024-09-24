@@ -3,6 +3,7 @@
 {% block content %}
 {% if event.photo %}
 <div class="event-header" style="background-image: url('{{ event.photo.url }}');">
+    <a href="{% url 'events' %}"><-</a>
     <h1>{{ event.title }}</h1>
     <p>{{ event.time }}</p>
     {% if event.requires_reservation %}
@@ -12,7 +13,8 @@
     {% endif %}
 </div>
 {% else %}
-<div class="event-header">
+<div class="no-photo event-header">
+    <a href="{% url 'events' %}"><-</a>
     <h1>{{ event.title }}</h1>
     <p>{{ event.time }}</p>
     {% if event.requires_reservation %}
@@ -22,8 +24,11 @@
     {% endif %}
 </div>
 {% endif %}
+
 <div class="event-content">
-    <p>{{ event.description|linebreaks }}</p>
+    <div id="even-description">
+        <p>{{ event.description|linebreaks }}</p>
+    </div>
     <div id="reservation_form">
     {% if event.requires_reservation %}
         {% if available_tickets > 0 %}

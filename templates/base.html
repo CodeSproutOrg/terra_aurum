@@ -6,9 +6,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title }}</title>
-    <link rel="icon" type="image/x-icon" href="{% static 'img/favicon.png' %}">
+    <link rel="icon" type="image/x-icon" href="{% static 'webapp/img/favicon.png' %}">
+    <!-- CSS -->
+    <link rel="stylesheet" href="{% static 'webapp/css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'webapp/css/events.css' %}">
     {% include './core/parts/css.html' %}
-    {% include './core/parts/js.html' %}
+    {% block extra_css %}{% endblock %}
+    <!-- JS -->
+    <script src="{% static 'webapp/js/side_bar.js' %}" defer></script>
+    {% block extra_js %}{% endblock %}
 </head>
 <body>
     <header id="header">{% include './core/parts/header.html' %}</header>
