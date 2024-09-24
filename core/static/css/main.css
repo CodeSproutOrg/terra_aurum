@@ -41,6 +41,7 @@ body {
 
 /* Page */
 header {
+    background-color: var(--background-color);
     width: 80%;
     padding: 1% 10%;
     display: flex;
@@ -107,7 +108,7 @@ header {
 
     /* Use for pages */
     & #content-inside {
-        padding: 150px 5% 0 5%;
+        padding: 10% 5% 0 5%;
 
         & #page-description {
             padding: 5%;
