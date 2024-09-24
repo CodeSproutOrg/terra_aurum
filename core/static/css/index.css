@@ -156,23 +156,6 @@
     & div:first-child {padding-right: 20px;}
 }
 
-/* Documents block */
-.documents-block {
-    padding: 5%;
-    background-color: var(--background-color);
-    & h2 {
-        margin: 0 0 5% 0;
-        color: var(--s-color);
-    }
-    & ul {
-        color: var(--s-color);
-        a {
-            color: var(--s-color);
-            font-style: italic;
-            text-decoration: underline;
-        }
-    }
-}
 
 /* Media */
 @media screen and (max-width: 800px) {
@@ -247,6 +230,7 @@
         margin-left: 0;
     }
 }
+
 /*
 #main-events::-webkit-scrollbar {
     width: 2px;

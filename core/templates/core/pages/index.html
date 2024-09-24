@@ -1,6 +1,15 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'webapp/css/index.css' %}">
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'webapp/js/button.js' %}" defer></script>
+<script src="{% static 'webapp/js/nav_a_color.js' %}" defer></script>
+{% endblock %}
+
 {% block content %}
 <div id="terra-aurum">
     <div>
@@ -78,7 +87,7 @@
             {{ form.message.label_tag }}
             {{ form.message }}
         </div>
-        <button class="color" type="submit">Odoslat'</button>
+        <button type="submit">Odoslat'</button>
     </form>
 </div>
 {% endblock %}

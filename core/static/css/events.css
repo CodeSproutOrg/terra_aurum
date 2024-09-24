@@ -49,13 +49,26 @@
         flex-direction: column;
         justify-content: center;
 }
+
 #content > .event-content {
         color: var(--s-color);
         & img {width: 100%;};
         padding: 5%;
 }
 
+#content > .no-photo {
+    color: var(--s-color);
+    padding: 250px 9% 0 9%;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+}
+
+#even-description {
+    padding: 0 5% 2% 5%;
+}
 #reservation_form {
+    padding: 0 5% 2% 5%;
     & form {
         margin-top: 3%;
         padding: 2%;

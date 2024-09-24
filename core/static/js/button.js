@@ -46,21 +46,3 @@ if (totalEvents > 1) {
     let event = document.getElementsByClassName('main-event')[0]
     event.style.transform = 'translateX(0)';
 };
-
-/* Sidebar menu */
-let MobNavButton = document.getElementById('menu-button');
-let navbar = document.getElementById('nav-bar');
-let header = document.getElementById('header');
-
-MobNavButton.addEventListener('click', OpenMenu);
-document.addEventListener('click', ClosedMenu);
-
-function OpenMenu() {
-    event.stopPropagation();
-    navbar.classList.toggle("open");
-    MobNavButton.classList.toggle("closed");
-}
-function ClosedMenu() {
-    navbar.classList.toggle("open");
-    MobNavButton.classList.toggle("closed");
-}
