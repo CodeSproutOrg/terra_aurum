@@ -13,7 +13,7 @@
 
 .t-color {color: #634411;}
 .b-color {background-color: #EEEFEB;}
-.sb-color {background-color: #B2863A;}
+.sb-color {background-color: var( --main-color);}
 .tb-color {background-color: #634411;}
 .light-font {font-weight: 400;}
 
@@ -29,6 +29,10 @@ button {
     font-family: "Cinzel", sans-serif;
     border: NONE;
     font-size: large;
+}
+.index-button {
+    background-color: var(--main-color);
+    color: var(--s-color);
 }
 
 
@@ -156,7 +160,7 @@ footer {
 }
 #communication {
     width: 50%;
-    padding: 2% 5%;
+    padding: 2%;
     text-align: end;
 }
 
@@ -179,7 +183,15 @@ footer {
 }
 
 /* Media */
+@media screen and (max-width: 1024px) {
+    #content-inside {padding: 16% 5% 0 5% !important;}
+}
+@media screen and (max-width: 900px) {
+    #content-inside {padding: 17% 5% 0 5% !important;}
+}
+
 @media screen and (max-width: 800px) {
+    #content-inside {padding: 19% 5% 0 5% !important;}
     header {
         overflow: hidden;
 
@@ -212,7 +224,7 @@ footer {
             transition: transform .5s;
 
             & a {
-                color: var(--s-color);
+                color: var(--s-color) !important;
                 margin: 1% 2%;
                 padding: 0 2%;
                 width: 40%;
@@ -225,8 +237,12 @@ footer {
 
     footer {font-size: 14px;}
 }
+@media screen and (max-width: 640px) {
+    #content-inside {padding: 28% 5% 0 5% !important;}
+}
 
 @media screen and (max-width: 426px) {
+    #content-inside {padding: 34% 5% 0 5% !important;}
     header div a {
         width: 100%;
         margin-left: 10px;
