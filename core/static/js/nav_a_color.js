@@ -1,10 +1,9 @@
-let nav_link = document.getElementsByClassName('navbar-button')
 const currentPath = window.location.pathname;
+let nav_link = document.getElementsByClassName('navbar-button');
 
-
-// Проверяем, на какой странице находимся
-if (currentPath === '/app/') {
+if (currentPath === '/app/' || currentPath.includes('/app/events/')) {
+    header.style.backgroundColor = "unset";
     for (let link of nav_link) {
         link.style.color = 'var(--main-color)';
     }
-}
+};

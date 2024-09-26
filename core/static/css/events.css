@@ -41,7 +41,7 @@
 /* Event */
 #content > .event-header {
         color: var(--s-color);
-        padding: 150px 5% 0 5%;
+        padding: 150px 10% 0 10%;
         background-size: cover;
         background-repeat: no-repeat;
         min-height: 400px;
@@ -64,29 +64,35 @@
     min-height: 0;
 }
 
-#even-description {
-    padding: 0 5% 2% 5%;
-}
-#reservation_form {
-    padding: 0 5% 2% 5%;
-    & form {
-        margin-top: 3%;
+.event-content {
+    #even-description {
+        font-size: var(--font-size);
+        padding: 0 5% 2% 5%;
+    }
+    #reservation_form {
+        margin: 0 5% 2% 5%;
         padding: 2%;
         background-color: var(--background-color);
-        & p {
-            display: flex;
-            flex-direction: column;
-            & label {
-                padding-bottom: 1%;
-            }
-            & input {
-                width: 250px;
-                padding: 5px;
-            }
+        & h2 {
+            margin-top: 0;
+            margin-bottom: 10px;
         }
-        & .button {
-            margin-top: 1%;
-            padding: 5px 20px;
+        & form {
+            & p {
+                display: flex;
+                flex-direction: column;
+                & label {
+                    padding-bottom: 1%;
+                }
+                & input {
+                    width: 250px;
+                    padding: 5px;
+                }
+            }
+            & button {
+                margin-top: 25px;
+                width: 265px;
+            }
         }
     }
 }

@@ -7,7 +7,6 @@
 
 {% block extra_js %}
 <script src="{% static 'webapp/js/button.js' %}" defer></script>
-<script src="{% static 'webapp/js/nav_a_color.js' %}" defer></script>
 {% endblock %}
 
 {% block content %}
@@ -47,7 +46,9 @@
             </div>
             <div class="event-content">
                 <p>{{ event.description|truncatewords:80 }}</p>
-                <a href="{% url 'event' event.slug %}" class="sb-color s-color">Prečítajte si viac o podujatí</a>
+                <button class="index-button">
+                    <a href="{% url 'event' event.slug %}">Prečítajte si viac o podujatí</a>
+                </button>
             </div>
         </div>
         {% endfor %}
@@ -87,7 +88,7 @@
             {{ form.message.label_tag }}
             {{ form.message }}
         </div>
-        <button type="submit">Odoslat'</button>
+        <button type="submit" class="index-button">Odoslat'</button>
     </form>
 </div>
 {% endblock %}
