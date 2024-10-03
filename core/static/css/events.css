@@ -13,6 +13,7 @@
     grid-gap: 20px;
 
     & .event {
+        box-shadow: 12px 12px 2px 1px #634411c2;
         background-color: var(--background-color);
         & .event-header {
             display: flex;
@@ -36,6 +37,7 @@
             font-size: smaller;
         }
     }
+    & .event:hover {}
 }
 
 /* Event */
@@ -49,13 +51,11 @@
         flex-direction: column;
         justify-content: center;
 }
-
 #content > .event-content {
         color: var(--s-color);
         & img {width: 100%;};
         padding: 5%;
 }
-
 #content > .no-photo {
     color: var(--s-color);
     padding: 250px 9% 0 9%;
@@ -70,6 +70,7 @@
         padding: 0 5% 2% 5%;
     }
     #reservation_form {
+        min-height: 350px;
         margin: 0 5% 2% 5%;
         padding: 2%;
         background-color: var(--background-color);
@@ -98,6 +99,9 @@
 }
 
 /* Media */
+@media screen and (max-width: 640px) {
+
+}
 @media screen and (max-width: 426px) {
     #content-inside > div:nth-child(2) {
         padding: 2% 5%;

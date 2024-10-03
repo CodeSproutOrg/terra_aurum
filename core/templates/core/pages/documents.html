@@ -22,13 +22,12 @@
     </div>
     <div class="page-content">
         <div class="documents-block">
-            <h2>Dokumenty na Dispozícii</h2>
             <ul>
                 {% for document in documents %}
                 <li>
                     <h4>{{ document.file_name }}</h4>
-                    <a href="{% url 'download_file' document.id %}">Stiahnuť</a>
                     <p>{{ document.description }}</p>
+                    <a href="{% url 'download_file' document.id %}">Stiahnuť</a>
                 </li>
                 {% endfor %}
             </ul>
