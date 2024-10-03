@@ -30,11 +30,17 @@ button {
     border: NONE;
     font-size: large;
 }
+
 .index-button {
     background-color: var(--main-color);
     color: var(--s-color);
+    font-style: italic;
+    padding: 1% 2%;
+    box-shadow: 12px 12px 2px 1px #63441145;
 }
-
+.index-button:hover {
+    background-color: var(--b-color);
+}
 
 /* Main  elements */
 body {
@@ -67,6 +73,7 @@ header {
         & a {
             margin: 0 2%;
             color: var(--s-color);
+            font-weight: bold;
         }
         & a:hover {
             border-bottom: 1px solid;
@@ -117,14 +124,18 @@ header {
         & #page-description {
             padding: 5%;
             & article {
+                width: 30%;
+                padding-bottom: 1%;
                 color: var(--s-color);
                 font-size: xx-large;
+                border-bottom: 3px solid var(--background-color);
             }
             & div {
                 display: flex;
                 flex-direction: column;
                 & p, address, a {
                     color: var(--s-color);
+                    font-size: var(--font-size);
                 }
             }
         }
@@ -177,7 +188,9 @@ footer {
         a {
             color: var(--s-color);
             font-style: italic;
-            text-decoration: underline;
+            /* text-decoration: underline; */
+            padding-bottom: 5px;
+            border-bottom: 1px solid var(--background-color);
         }
     }
 }
@@ -242,6 +255,10 @@ footer {
 }
 
 @media screen and (max-width: 426px) {
+    header {
+        padding: 1% 5%;
+        width: 90%;
+    }
     #content-inside {padding: 34% 5% 0 5% !important;}
     header div a {
         width: 100%;

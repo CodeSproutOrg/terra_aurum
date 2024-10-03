@@ -35,11 +35,9 @@ def index(request):
 def event(request, slug):
     template = f'{template_folder}/events/event.html'
     this_event = get_object_or_404(Event, slug=slug)
-    data = {
-        'title': this_event.title,
-        'event': this_event,
-        'available_tickets': this_event.available_tickets
-    }
+    data['title'] = this_event.title
+    data['event'] = this_event
+    data['available_tickets'] = this_event.available_tickets
 
     if this_event.requires_reservation:
         form = ReservationForm(request.POST or None)
